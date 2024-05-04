@@ -8,6 +8,7 @@ concurrency:
 on:  # yamllint disable-line rule:truthy
   push:
     branches:
+      - dev
       - master
     tags:
       - 'v*'
@@ -42,8 +43,8 @@ jobs:
           images: |
             ${{ env.REGISTRY_IMAGE }}
           labels: |
-            org.opencontainers.image.title=pdns-auth
-            org.opencontainers.image.description=PowerDNS authAuthoritative Server
+            org.opencontainers.image.title=docker-speedtest-grafana
+            org.opencontainers.image.description=Speedtest monitoring and visualizing results in Grafana
             org.opencontainers.image.vendor=mschirrmeister
 
       - name: Rename meta bake definition file
