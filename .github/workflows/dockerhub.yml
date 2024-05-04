@@ -158,4 +158,3 @@ jobs:
       - name: Inspect image
         run: docker buildx imagetools inspect ${{ env.REGISTRY_IMAGE }}:$(jq -r '.target."docker-metadata-action".args.DOCKER_META_VERSION' /tmp/bake-meta.json)  # yamllint disable-line rule:line-length
 ...
-
