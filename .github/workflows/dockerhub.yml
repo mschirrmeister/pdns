@@ -76,6 +76,12 @@ jobs:
       - name: Check out the repo
         uses: actions/checkout@v4
 
+      # Update references
+      - name: Git Submodule Update
+        run: |
+          git submodule init
+          git submodule update
+
       - name: Download meta bake definition
         uses: actions/download-artifact@v4
         with:
