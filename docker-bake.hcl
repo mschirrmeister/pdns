@@ -5,7 +5,7 @@ variable "DEFAULT_TAG" {
 // Special target: https://github.com/docker/metadata-action#bake-definition
 target "docker-metadata-action" {
   tags = ["${DEFAULT_TAG}"]
-  dockerfile = "Dockerfile-auth"
+  dockerfile = "Dockerfile-auth.alpine"
 }
 
 // Default target if none specified
