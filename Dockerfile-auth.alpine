@@ -28,6 +28,8 @@ RUN apk add \
 #  luajit-dev-2.1_p20240314-r0 \
 #  lua5.3-dev
 
+WORKDIR /source/
+
 RUN apk add \
   gcc \
   g++ \
@@ -48,8 +50,6 @@ RUN apk add \
   && git clone --depth 1 -b auth-4.9.0 https://github.com/PowerDNS/pdns.git . \
   && git submodule init && git submodule update \
   && cp -p builder/helpers/set-configure-ac-version.sh /usr/local/bin
-
-WORKDIR /source/
 
 ARG MAKEFLAGS=
 ENV MAKEFLAGS ${MAKEFLAGS:--j2}
